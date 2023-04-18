@@ -1,5 +1,26 @@
 ![CI Status](https://github.com/libcsp/libcsp/actions/workflows/build-test.yml/badge.svg)
 
+# Zephyr support
+This fork adds support for Zephyr v3.3.0, but it's untested and hacky, look at the diff!
+To test the example applications add the module:
+```
+  remotes:
+    - name: libcsp
+      url-base: https://github.com/libcsp
+
+  projects:
+    - name: libcsp
+      remote: libcsp
+      revision: develop
+      path: modules/lib/libcsp
+```
+
+And then build:
+```
+west build --board qemu_x86 ../modules/lib/libcsp/zephyr/samples/arch
+west build --board qemu_x86 ../modules/lib/libcsp/zephyr/samples/server-client
+```
+
 # The Cubesat Space Protocol
 
 Cubesat Space Protocol (CSP) is a small protocol stack written in C. CSP
