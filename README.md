@@ -2,6 +2,9 @@
 
 # Zephyr support
 This fork adds support for Zephyr v3.3.0, but it's untested and hacky, look at the diff!
+For example, the SFP (Simple Fragmentation Protocol) module is not compiled as of now because it was using `malloc()` so it would need more
+care with Zephyr.
+
 To test the example applications add the module:
 ```
   remotes:
