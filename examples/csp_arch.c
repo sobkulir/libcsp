@@ -1,5 +1,4 @@
 
-#include <unistd.h>
 #include <csp/csp_debug.h>
 #include <csp/csp_types.h>
 #include <csp/csp_hooks.h>

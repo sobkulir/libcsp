@@ -19,8 +19,13 @@ target_sources(libcsp PRIVATE
   csp_services.c
   csp_rdp.c
   csp_rdp_queue.c
-  csp_sfp.c
   )
+
+# This is a hack to not include SFP module in Zephyr build because
+# it uses malloc which doesn't work in Zephyr out of box.
+if(NOT CMAKE_SYSTEM_NAME STREQUAL "Zephyr")
+  target_sources(libcsp PRIVATE csp_sfp.c)
+endif()
 
 if (CSP_HAVE_STDIO)
   target_sources(libcsp PRIVATE csp_rtable_stdio.c)

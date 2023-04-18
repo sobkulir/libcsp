@@ -19,7 +19,7 @@ typedef void * csp_queue_handle_t;
 #if (CSP_FREERTOS)
 typedef StaticQueue_t csp_static_queue_t;
 #elif (CSP_ZEPHYR)
-#include <zephyr.h>
+#include <zephyr/kernel.h>
 typedef struct k_msgq csp_static_queue_t;
 #else
 typedef void * csp_static_queue_t;
